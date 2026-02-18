@@ -1,0 +1,242 @@
+{
+  "report_metadata": {
+    "generated_at": "2026-02-18T12:23:34.045865",
+    "agent_version": "1.0.0",
+    "total_leases_analyzed": 4
+  },
+  "summary": {
+    "total_decisions": 4,
+    "auto_approved": 2,
+    "escalated_to_human": 2,
+    "total_findings": 4,
+    "critical_findings": 0,
+    "high_risk_findings": 1,
+    "average_confidence": 0.9125
+  },
+  "decisions": [
+    {
+      "decision_id": "5ed6c2d9-9cbe-463d-9721-891fd859a031",
+      "lease_id": "LEASE-001",
+      "action": "auto_approve",
+      "rationale": "Acceptable confidence with manageable risk level",
+      "confidence_score": 0.85,
+      "findings_count": 0,
+      "timestamp": "2026-02-18T12:23:34.045105"
+    },
+    {
+      "decision_id": "ceded70c-1321-465f-80a1-3f69ee6743a2",
+      "lease_id": "LEASE-002",
+      "action": "escalate_to_human",
+      "rationale": "MEDIUM risk with required adjustments",
+      "confidence_score": 0.95,
+      "findings_count": 1,
+      "timestamp": "2026-02-18T12:23:34.045375"
+    },
+    {
+      "decision_id": "72c7ee81-b4b0-4e32-9ee0-40a55678021b",
+      "lease_id": "LEASE-003",
+      "action": "auto_approve",
+      "rationale": "High confidence classification with no material findings",
+      "confidence_score": 1.0,
+      "findings_count": 1,
+      "timestamp": "2026-02-18T12:23:34.045557"
+    },
+    {
+      "decision_id": "7163a50e-6833-47fa-88aa-72433a031281",
+      "lease_id": "LEASE-004",
+      "action": "escalate_to_human",
+      "rationale": "HIGH risk with required adjustments",
+      "confidence_score": 0.85,
+      "findings_count": 2,
+      "timestamp": "2026-02-18T12:23:34.045674"
+    }
+  ],
+  "findings_by_lease": {
+    "LEASE-001": [],
+    "LEASE-002": [
+      {
+        "finding_id": "4e819b84-dd99-46b6-8167-1be4af7dc621",
+        "type": "classification_validation",
+        "description": "Finance lease identified - requires ROU asset and liability recognition",
+        "risk_level": "medium",
+        "recommendation": "Verify journal entries for initial recognition and subsequent measurement",
+        "requires_adjustment": true,
+        "affected_accounts": [
+          "ROU Asset - Finance",
+          "Lease Liability - Finance"
+        ],
+        "suggested_adjustment": {
+          "debit": {
+            "ROU Asset - Finance": 82389.17891216534
+          },
+          "credit": {
+            "Lease Liability - Finance": 82389.17891216534
+          }
+        }
+      }
+    ],
+    "LEASE-003": [
+      {
+        "finding_id": "da3e1664-175d-40f4-ab9a-203914b61809",
+        "type": "policy_election",
+        "description": "Short-term lease eligible for recognition exemption",
+        "risk_level": "low",
+        "recommendation": "Confirm company policy election for short-term lease treatment",
+        "requires_adjustment": false,
+        "affected_accounts": [
+          "Lease Expense"
+        ],
+        "suggested_adjustment": null
+      }
+    ],
+    "LEASE-004": [
+      {
+        "finding_id": "269f7a4b-5294-406f-ad03-e259e0dc1a02",
+        "type": "missing_data",
+        "description": "Material lease missing interest rate (IBR)",
+        "risk_level": "high",
+        "recommendation": "Obtain incremental borrowing rate for accurate PV calculation",
+        "requires_adjustment": true,
+        "affected_accounts": [
+          "ROU Asset",
+          "Lease Liability"
+        ],
+        "suggested_adjustment": null
+      },
+      {
+        "finding_id": "acf54f44-b960-4be1-91e5-b9da9b46af9e",
+        "type": "missing_data",
+        "description": "Material lease missing asset fair value",
+        "risk_level": "medium",
+        "recommendation": "Obtain asset fair value to verify classification",
+        "requires_adjustment": false,
+        "affected_accounts": [
+          "ROU Asset"
+        ],
+        "suggested_adjustment": null
+      }
+    ]
+  },
+  "items_requiring_human_review": [
+    {
+      "decision_id": "ceded70c-1321-465f-80a1-3f69ee6743a2",
+      "lease_id": "LEASE-002",
+      "priority": "MEDIUM",
+      "reason": "MEDIUM risk with required adjustments",
+      "findings_count": 1
+    },
+    {
+      "decision_id": "7163a50e-6833-47fa-88aa-72433a031281",
+      "lease_id": "LEASE-004",
+      "priority": "HIGH",
+      "reason": "HIGH risk with required adjustments",
+      "findings_count": 2
+    }
+  ],
+  "audit_trail": [
+    {
+      "timestamp": "2026-02-18T12:23:34.044871",
+      "action_type": "analysis_started",
+      "details": {
+        "lease_id": "LEASE-001"
+      },
+      "agent_version": "1.0.0"
+    },
+    {
+      "timestamp": "2026-02-18T12:23:34.044937",
+      "action_type": "classification_started",
+      "details": {
+        "lease_id": "LEASE-001"
+      },
+      "agent_version": "1.0.0"
+    },
+    {
+      "timestamp": "2026-02-18T12:23:34.045112",
+      "action_type": "analysis_completed",
+      "details": {
+        "lease_id": "LEASE-001",
+        "decision": "auto_approve",
+        "findings_count": 0
+      },
+      "agent_version": "1.0.0"
+    },
+    {
+      "timestamp": "2026-02-18T12:23:34.045275",
+      "action_type": "analysis_started",
+      "details": {
+        "lease_id": "LEASE-002"
+      },
+      "agent_version": "1.0.0"
+    },
+    {
+      "timestamp": "2026-02-18T12:23:34.045278",
+      "action_type": "classification_started",
+      "details": {
+        "lease_id": "LEASE-002"
+      },
+      "agent_version": "1.0.0"
+    },
+    {
+      "timestamp": "2026-02-18T12:23:34.045379",
+      "action_type": "analysis_completed",
+      "details": {
+        "lease_id": "LEASE-002",
+        "decision": "escalate_to_human",
+        "findings_count": 1
+      },
+      "agent_version": "1.0.0"
+    },
+    {
+      "timestamp": "2026-02-18T12:23:34.045496",
+      "action_type": "analysis_started",
+      "details": {
+        "lease_id": "LEASE-003"
+      },
+      "agent_version": "1.0.0"
+    },
+    {
+      "timestamp": "2026-02-18T12:23:34.045522",
+      "action_type": "classification_started",
+      "details": {
+        "lease_id": "LEASE-003"
+      },
+      "agent_version": "1.0.0"
+    },
+    {
+      "timestamp": "2026-02-18T12:23:34.045560",
+      "action_type": "analysis_completed",
+      "details": {
+        "lease_id": "LEASE-003",
+        "decision": "auto_approve",
+        "findings_count": 1
+      },
+      "agent_version": "1.0.0"
+    },
+    {
+      "timestamp": "2026-02-18T12:23:34.045634",
+      "action_type": "analysis_started",
+      "details": {
+        "lease_id": "LEASE-004"
+      },
+      "agent_version": "1.0.0"
+    },
+    {
+      "timestamp": "2026-02-18T12:23:34.045637",
+      "action_type": "classification_started",
+      "details": {
+        "lease_id": "LEASE-004"
+      },
+      "agent_version": "1.0.0"
+    },
+    {
+      "timestamp": "2026-02-18T12:23:34.045677",
+      "action_type": "analysis_completed",
+      "details": {
+        "lease_id": "LEASE-004",
+        "decision": "escalate_to_human",
+        "findings_count": 2
+      },
+      "agent_version": "1.0.0"
+    }
+  ]
+}
